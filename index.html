@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Muhammad Irsyad Dzulfaqor, remote data analyst: Power BI and Looker Studio dashboards, sales and customer analytics, predictive models and data automation.">
+<meta property="og:title" content="Muhammad Irsyad Dzulfaqor, Data Analyst">
+<meta property="og:description" content="Dashboards, sales analytics and predictive models for distribution, retail and nonprofit teams. Six public projects with live demos.">
+<title>Muhammad Irsyad Dzulfaqor · Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0}img{max-width:100%}
+/* Layout: an analyst's report — a left index column on wide screens, one measured reading column, figures set in mono like a ledger. */
+:root{
+  --bg:#f2f4f3; --surface:#ffffff; --ink:#14211f; --muted:#56635f; --rule:#d5dbd8;
+  --accent:#0f6b5c; --accent-soft:#dcefe9; --mark:#f1c84b;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1514; --surface:#162020; --ink:#e6edeb; --muted:#9aa9a5; --rule:#2a3735;
+  --accent:#5fc7b1; --accent-soft:#183a34; --mark:#d9b23c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1514; --surface:#162020; --ink:#e6edeb; --muted:#9aa9a5; --rule:#2a3735;
+  --accent:#5fc7b1; --accent-soft:#183a34; --mark:#d9b23c; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-block:48px 64px;display:grid;gap:72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:1.75rem;font-weight:700}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.eyebrow{font:500 .75rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+section{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px 40px}
+section>header{display:grid;gap:10px;align-content:start}
+@media (max-width:760px){section{grid-template-columns:minmax(0,1fr)}}
+
+/* Hero */
+.hero{display:grid;gap:28px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.02em;max-width:16ch}
+.hero h1 .hl{background:linear-gradient(transparent 62%,var(--mark) 62%,var(--mark) 92%,transparent 92%);padding-inline:2px}
+.lede{font-size:1.15rem;max-width:60ch;color:var(--muted)}
+.lede strong{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:6px;font:600 .95rem var(--body);
+  text-decoration:none;border:1px solid var(--rule);color:var(--ink);background:var(--surface);cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.email{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.92rem;user-select:all}
+.ledger{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--rule)}
+.ledger div{padding:14px 16px 14px 0;display:grid;gap:2px}
+.ledger b{font:500 1.6rem/1.1 var(--mono)}
+.ledger span{font-size:.85rem;color:var(--muted)}
+@media (max-width:640px){.ledger{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.svc{background:var(--surface);padding:22px;display:grid;gap:10px;align-content:start}
+.svc .tools{font:400 .8rem var(--mono);color:var(--muted)}
+.svc .proof{font-size:.9rem;border-left:3px solid var(--mark);padding-left:10px}
+@media (max-width:640px){.services{grid-template-columns:minmax(0,1fr)}}
+
+/* Projects */
+.projects{display:grid;gap:0}
+.proj{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:8px 24px;padding-block:22px;border-top:1px solid var(--rule)}
+.proj:last-child{border-bottom:1px solid var(--rule)}
+.proj p{color:var(--muted);max-width:62ch}
+.proj .metric{grid-row:1 / span 3;grid-column:2;text-align:right;align-self:start}
+.proj .metric b{display:block;font:500 1.7rem/1.1 var(--mono);color:var(--accent)}
+.proj .metric span{font-size:.8rem;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.9rem;font-weight:500}
+.tag{font:500 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--accent-soft);color:var(--accent);padding:3px 7px;border-radius:3px;margin-left:8px;vertical-align:middle}
+@media (max-width:560px){.proj{grid-template-columns:minmax(0,1fr)}.proj .metric{grid-row:auto;grid-column:auto;text-align:left}}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;gap:6px;align-content:start;border-top:2px solid var(--ink);padding-top:12px}
+.steps li::before{content:counter(s,decimal-leading-zero);font:500 .8rem var(--mono);color:var(--accent)}
+.steps p{font-size:.92rem;color:var(--muted)}
+@media (max-width:760px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* Hours table */
+.tablebox{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:.95rem}
+th,td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--rule)}
+th{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+td.num{white-space:nowrap}
+tr.me td{font-weight:600}
+.note{font-size:.9rem;color:var(--muted);margin-top:12px}
+
+/* Experience */
+.timeline{display:grid;gap:18px}
+.job{display:grid;grid-template-columns:130px minmax(0,1fr);gap:4px 20px}
+.job .when{font:400 .85rem var(--mono);color:var(--muted);padding-top:2px}
+.job p{color:var(--muted);font-size:.95rem}
+@media (max-width:520px){.job{grid-template-columns:minmax(0,1fr)}}
+.certs{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.certs li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.certs .num{color:var(--accent)}
+
+footer.contact{border-top:2px solid var(--ink);padding-top:28px;display:grid;gap:18px}
+footer.contact h2{font-size:clamp(1.6rem,4vw,2.4rem)}
+.small{font-size:.85rem;color:var(--muted)}
+#copied{font-size:.85rem;color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s ease}.btn:hover{transform:translateY(-1px)}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">Muhammad Irsyad Dzulfaqor · Data Analyst · Bandung, Indonesia (UTC+7)</span>
+    <h1>I turn sales and transaction data into <span class="hl">decisions</span> your team can act on.</h1>
+    <p class="lede">Five years running B2B sales taught me what managers actually need from a report. Now I build <strong>Power BI and Looker Studio dashboards</strong>, <strong>SQL and Python pipelines</strong> and <strong>machine-learning prioritization tools</strong> for distribution, retail and nonprofit teams. Available for remote freelance and contract work in English or Indonesian.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.linkedin.com/in/mirsyaddzulfaqor/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/mirsyaddzulfaqor-tech" target="_blank" rel="noopener">GitHub</a>
+      <span class="email" id="email">m.irsyaddzulfaqor@gmail.com</span>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <span id="copied" role="status" aria-live="polite"></span>
+    </div>
+    <div class="ledger" aria-label="At a glance">
+      <div><b class="num">5+</b><span>years in B2B sales &amp; commercial leadership</span></div>
+      <div><b class="num">6</b><span>public data projects with code</span></div>
+      <div><b class="num">982</b><span>/1000 on Microsoft Azure Data Fundamentals</span></div>
+      <div><b class="num">2&nbsp;h</b><span>weekly reporting, down from daily manual work</span></div>
+    </div>
+  </div>
+
+  <section id="services" aria-labelledby="h-services">
+    <header><span class="eyebrow">What I do</span><h2 id="h-services">Services</h2></header>
+    <div class="services">
+      <article class="svc">
+        <h3>Dashboards &amp; recurring reports</h3>
+        <p>Executive and operational dashboards with clear KPIs, built on a clean data model so they keep working when new data arrives.</p>
+        <p class="proof">Built a 5-page Power BI sell-in dashboard used by the board of directors and senior managers.</p>
+        <span class="tools">Power BI · DAX · Looker Studio · Google Sheets · Excel</span>
+      </article>
+      <article class="svc">
+        <h3>Sales &amp; customer analytics</h3>
+        <p>Sell-in vs sell-out, distributor and territory performance, RFM segmentation, churn risk and customer personas, written up as actions, not just charts.</p>
+        <p class="proof">Found that discounts cut margin from 50% to 41% without lifting order volume.</p>
+        <span class="tools">SQL · Python (pandas) · RFM · K-Means</span>
+      </article>
+      <article class="svc">
+        <h3>Predictive models &amp; small data apps</h3>
+        <p>Forecasting, classification and recommendation models, tested honestly on held-out or future data and delivered as a simple web app your team can use.</p>
+        <p class="proof">Donor priority queue narrowed telemarketing follow-up to the top 7% of 20,000+ donors.</p>
+        <span class="tools">scikit-learn · XGBoost · Streamlit</span>
+      </article>
+      <article class="svc">
+        <h3>Data cleaning &amp; automation</h3>
+        <p>Messy exports from CRMs, ERPs and distributor files turned into one tidy master table, with a repeatable script instead of weekly copy-paste.</p>
+        <p class="proof">Standardized multi-distributor sales files into master tables in Python.</p>
+        <span class="tools">Python · Power Query · Qontak CRM · Microsoft Dynamics GP</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="h-projects">
+    <header><span class="eyebrow">Proof of work</span><h2 id="h-projects">Selected projects</h2><p class="small">Every project has public code. Client work is shown as a demo on synthetic data.</p></header>
+    <div class="projects">
+      <article class="proj">
+        <h3>Donor Lifecycle &amp; Reactivation System<span class="tag">Live demo</span></h3>
+        <p>RFM segmentation plus a gradient-boosted model that ranks lapsed donors by urgency for the follow-up team. Built during a remote internship with a nonprofit; the public version runs on synthetic data.</p>
+        <div class="links">
+          <a href="https://irsyad-donor-reactivation-demo.streamlit.app/" target="_blank" rel="noopener">Live app</a>
+          <a href="https://lookerstudio.google.com/reporting/d3139633-8c45-4394-98cb-cbda71031f90" target="_blank" rel="noopener">Looker Studio dashboard</a>
+          <a href="https://github.com/mirsyaddzulfaqor-tech/donor-reactivation-demo" target="_blank" rel="noopener">Code</a>
+        </div>
+        <div class="metric"><b>7%</b><span>of donors flagged as high urgency</span></div>
+      </article>
+      <article class="proj">
+        <h3>Flight Price Prediction<span class="tag">Live app</span></h3>
+        <p>Gradient boosting on 300,000 flights, plus an app that estimates a fare and shows the cheapest day to book. Economy fares are 65% cheaper when booked 22–49 days ahead.</p>
+        <div class="links">
+          <a href="https://irsyad-flight-price.streamlit.app/" target="_blank" rel="noopener">Live app</a>
+          <a href="https://github.com/mirsyaddzulfaqor-tech/flight-price-prediction" target="_blank" rel="noopener">Code</a>
+        </div>
+        <div class="metric"><b class="num">R² 0.985</b><span>about 12% average error</span></div>
+      </article>
+      <article class="proj">
+        <h3>Customer Segmentation &amp; Product Recommendation</h3>
+        <p>540,000 online-retail transactions turned into five customer segments and a recommender tested on purchases it had not seen. 44% of returning customers bought a recommended new product, against 32% for a bestseller list.</p>
+        <div class="links"><a href="https://github.com/mirsyaddzulfaqor-tech/customer-segmentation-recommendation" target="_blank" rel="noopener">Code &amp; notebook</a></div>
+        <div class="metric"><b class="num">1.8×</b><span>precision vs bestseller baseline</span></div>
+      </article>
+      <article class="proj">
+        <h3>Customer Churn Prediction</h3>
+        <p>Telecom churn model with class-imbalance handling and a risk ranking for retention campaigns. The top 20% of the ranking reaches half of all churners.</p>
+        <div class="links"><a href="https://github.com/mirsyaddzulfaqor-tech/customer-churn-prediction" target="_blank" rel="noopener">Code &amp; notebook</a></div>
+        <div class="metric"><b class="num">78%</b><span>of churners caught (recall)</span></div>
+      </article>
+      <article class="proj">
+        <h3>Customer Segmentation for Marketing</h3>
+        <p>K-Means clustering of 2,000 customers into four personas, each with a targeted marketing action.</p>
+        <div class="links"><a href="https://github.com/mirsyaddzulfaqor-tech/customer-segmentation" target="_blank" rel="noopener">Code &amp; notebook</a></div>
+        <div class="metric"><b class="num">4</b><span>actionable personas</span></div>
+      </article>
+      <article class="proj">
+        <h3>Analysis Collection</h3>
+        <p>House price regression (Lasso, about 11.7% typical error), a data science salary study, and an e-commerce profit analysis that showed discounts give margin away without adding volume.</p>
+        <div class="links"><a href="https://github.com/mirsyaddzulfaqor-tech/bootcamp-projects" target="_blank" rel="noopener">Code &amp; notebooks</a></div>
+        <div class="metric"><b class="num">50→41%</b><span>margin lost to discounts</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="process" aria-labelledby="h-process">
+    <header><span class="eyebrow">Working together</span><h2 id="h-process">How a project runs</h2></header>
+    <ol class="steps">
+      <li><h3>Scope</h3><p>A short call or written brief: the decision you need to make and the data you have.</p></li>
+      <li><h3>Data audit</h3><p>I check quality and coverage and tell you early what the data can and cannot answer.</p></li>
+      <li><h3>Build</h3><p>Dashboard, analysis or model, with a mid-point check-in so nothing is a surprise.</p></li>
+      <li><h3>Handover</h3><p>Files, a short guide and a walkthrough, so your team can run it without me.</p></li>
+    </ol>
+  </section>
+
+  <section id="hours" aria-labelledby="h-hours">
+    <header><span class="eyebrow">Availability</span><h2 id="h-hours">Working hours</h2></header>
+    <div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Your location</th><th>My regular hours in your time</th></tr></thead>
+          <tbody>
+            <tr class="me"><td>Jakarta / Bandung (WIB)</td><td class="num">21:00 – 06:00</td></tr>
+            <tr><td>New York (EST)</td><td class="num">09:00 – 18:00</td></tr>
+            <tr><td>London (GMT)</td><td class="num">14:00 – 23:00</td></tr>
+            <tr><td>Berlin / Amsterdam (CET)</td><td class="num">15:00 – 00:00</td></tr>
+            <tr><td>Singapore (SGT)</td><td class="num">22:00 – 07:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Covers a full US East Coast business day and the European afternoon. Times shown for northern-hemisphere winter; other hours are possible for the right project.</p>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="h-exp">
+    <header><span class="eyebrow">Background</span><h2 id="h-exp">Experience</h2></header>
+    <div class="timeline">
+      <div class="job"><span class="when">2025 – now</span><div><h3>Data Analyst, Commercial Operations · PT Tata Global Sentosa</h3><p>FMCG distribution. Sell-in, sell-out and sales-activity monitoring, Power BI reporting for management, the rolling forecast for the factory and analysis for the 2027 business plan.</p></div></div>
+      <div class="job"><span class="when">2026</span><div><h3>Data Analyst Intern (remote) · Mizan Amanah</h3><p>Nonprofit fundraising. Led the donor reactivation analysis end to end: cleaning, RFM, the ML model, the dashboard and the app. Grade: Excellent.</p></div></div>
+      <div class="job"><span class="when">2020 – 2025</span><div><h3>Sales, Marketing &amp; Commercial Supervisor · PT Nusa Mega Makmur Sentosa</h3><p>Grew annual revenue 87% and won about 10 new B2B clients a year, tracking pipeline and collection data to set targets.</p></div></div>
+      <div class="job"><span class="when">2018 – 2020</span><div><h3>Credit, data entry &amp; marketing roles · Mandiri Utama Finance, Strategic Property Indonesia</h3><p>Restructured customer credit data entry and prepared sales and conversion reports.</p></div></div>
+    </div>
+  </section>
+
+  <section id="credentials" aria-labelledby="h-cred">
+    <header><span class="eyebrow">Credentials</span><h2 id="h-cred">Education &amp; certification</h2></header>
+    <ul class="certs">
+      <li><strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong><span class="num">982 / 1000</span><span class="small">Oct 2026</span></li>
+      <li><strong>Data Science Bootcamp, Digital Skola</strong><span class="small">3-month intensive, graduated with grade Great, 2026</span></li>
+      <li><strong>Bachelor of Management, Universitas Jenderal Achmad Yani</strong><span class="small">2014 – 2018</span></li>
+      <li><strong>Languages</strong><span class="small">Indonesian (native), English (professional working proficiency)</span></li>
+    </ul>
+  </section>
+
+  <footer class="contact">
+    <span class="eyebrow">Contact</span>
+    <h2>Have data that should be answering a question? Send me a short brief.</h2>
+    <div class="cta">
+      <span class="email">m.irsyaddzulfaqor@gmail.com</span>
+      <a class="btn primary" href="https://www.linkedin.com/in/mirsyaddzulfaqor/" target="_blank" rel="noopener">Message on LinkedIn</a>
+      <a class="btn" href="https://github.com/mirsyaddzulfaqor-tech" target="_blank" rel="noopener">See the code</a>
+    </div>
+    <p class="small">I usually reply within 24 hours.</p>
+  </footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var out = document.getElementById('copied');
+  var text = document.getElementById('email').textContent.trim();
+  var fallback = function(){
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    out.textContent = 'Selected. Press Ctrl+C to copy.';
+  };
+  try {
+    navigator.clipboard.writeText(text).then(function(){ out.textContent = 'Email copied.'; }, fallback);
+  } catch (e) { fallback(); }
+});
+</script>
+
+</body>
+</html>
